@@ -1,0 +1,58 @@
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black p-4">
+  <p-toast></p-toast>
+  <p-card class="w-full max-w-md shadow-2xl border-round-3xl login-card transition-all duration-300 hover:scale-105 mt-8">
+    <ng-template pTemplate="header">
+      <div class="text-center py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-round-top-2xl">
+        <i class="pi pi-lock text-4xl mb-2 lock-icon"></i>
+        <h2 class="text-2xl font-bold m-0">Bienvenido</h2>
+      </div>
+    </ng-template>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="p-fluid">
+      <div class="field mb-4">
+        <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">Correo Electrónico</label>
+        <span class="p-input-icon-left w-full">
+          <i class="pi pi-envelope"></i>
+          <input
+            pInputText
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="tu@email.com"
+            class="w-full"
+          />
+        </span>
+      </div>
+
+      <div class="field mb-6">
+        <label for="password" class="block text-sm font-semibold text-gray-300 mb-2">Contraseña</label>
+        <p-password
+          id="password"
+          formControlName="password"
+          placeholder="Tu contraseña"
+          styleClass="w-full"
+          [toggleMask]="true"
+          [feedback]="false"
+        ></p-password>
+      </div>
+
+      <p-button
+        type="submit"
+        label="Iniciar Sesión"
+        styleClass="w-full p-button-lg p-button-gradient bg-gradient-to-r from-cyan-500 to-blue-600 border-none"
+        [loading]="loading"
+        [disabled]="!loginForm.valid"
+      ></p-button>
+    </form>
+
+    <div *ngIf="errorMessage" class="mt-4 p-3 bg-red-600 text-white rounded text-center">
+      {{ errorMessage }}
+    </div>
+
+    <ng-template pTemplate="footer">
+      <div class="text-center text-sm text-gray-400 mt-4">
+        ¿No tienes cuenta? <a routerLink="/register" class="text-cyan-400 hover:text-cyan-300 font-semibold">Regístrate</a>
+      </div>
+    </ng-template>
+  </p-card>
+</div>

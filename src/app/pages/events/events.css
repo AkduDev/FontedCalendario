@@ -1,0 +1,724 @@
+/* Contenedor principal */
+.events-container {
+  min-height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.25rem;
+}
+
+/* Header Section */
+.header-section {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid #334155;
+  margin-bottom: 1rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.title-wrapper {
+  flex: 1;
+  min-width: 250px;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0.25rem 0;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.page-subtitle {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.action-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Table Card */
+.table-card {
+  background: #1e293b;
+  border-radius: 10px;
+  padding: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  border: 1px solid #334155;
+}
+
+/* Modern Table Styles */
+::ng-deep .modern-table {
+  background: transparent;
+}
+
+::ng-deep .modern-table .p-datatable-header {
+  background: #0f172a;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px 8px 0 0;
+}
+
+::ng-deep .modern-table .p-datatable-thead > tr > th {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+::ng-deep .modern-table .p-datatable-thead > tr > th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+::ng-deep .modern-table .p-datatable-thead > tr > th:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+::ng-deep .modern-table .p-datatable-tbody > tr {
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+::ng-deep .modern-table .p-datatable-tbody > tr:hover {
+  background: linear-gradient(135deg, #1e3a8a15 0%, #1e40af15 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+::ng-deep .modern-table .p-datatable-tbody > tr > td {
+  padding: 0.75rem;
+  color: #e2e8f0;
+  border: none;
+  font-size: 0.875rem;
+}
+
+/* Paginador */
+::ng-deep .modern-table .p-paginator {
+  background: #0f172a;
+  color: #e2e8f0;
+  border: none;
+  padding: 1rem;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #334155;
+}
+
+::ng-deep .modern-table .p-paginator .p-paginator-pages .p-paginator-page {
+  color: #94a3b8;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .modern-table .p-paginator .p-paginator-pages .p-paginator-page:hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+::ng-deep .modern-table .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+
+::ng-deep .modern-table .p-paginator .p-paginator-first,
+::ng-deep .modern-table .p-paginator .p-paginator-prev,
+::ng-deep .modern-table .p-paginator .p-paginator-next,
+::ng-deep .modern-table .p-paginator .p-paginator-last {
+  color: #94a3b8;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 6px;
+}
+
+::ng-deep .modern-table .p-paginator .p-paginator-first:not(.p-disabled):hover,
+::ng-deep .modern-table .p-paginator .p-paginator-prev:not(.p-disabled):hover,
+::ng-deep .modern-table .p-paginator .p-paginator-next:not(.p-disabled):hover,
+::ng-deep .modern-table .p-paginator .p-paginator-last:not(.p-disabled):hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+::ng-deep .modern-table .p-paginator .p-dropdown {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+  border-radius: 6px;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .modern-table .p-paginator .p-dropdown:hover {
+  background: #334155;
+  border-color: #3b82f6;
+}
+
+::ng-deep .modern-table .p-paginator .p-dropdown .p-dropdown-trigger {
+  color: #94a3b8;
+  width: 2rem;
+}
+
+::ng-deep .modern-table .p-paginator .p-dropdown .p-dropdown-label {
+  padding: 0.5rem;
+  color: #e2e8f0;
+}
+
+::ng-deep .modern-table .p-paginator .p-dropdown-panel {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+}
+
+::ng-deep .modern-table .p-paginator .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  color: #e2e8f0;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .modern-table .p-paginator .p-dropdown-panel .p-dropdown-items .p-dropdown-item:hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+::ng-deep .modern-table .p-paginator .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+}
+
+/* Event Badges y Elementos */
+.event-id {
+  display: inline-block;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.event-title {
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.event-description {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+.event-datetime {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.date-info,
+.time-info {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.status-complete {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+}
+
+.status-pending {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
+}
+
+/* Notify Badges */
+.notify-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.notify-active {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+
+.notify-inactive {
+  background: #475569;
+  color: #94a3b8;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+::ng-deep .action-buttons .p-button {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+::ng-deep .action-buttons .p-button.p-button-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border: none;
+  box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3);
+  transition: all 0.3s ease;
+}
+
+::ng-deep .action-buttons .p-button.p-button-danger:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(239, 68, 68, 0.4);
+}
+
+::ng-deep .action-buttons .p-button.p-button-danger:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+.empty-title {
+  color: #cbd5e1;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.empty-message {
+  color: #64748b;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 960px) {
+  .events-container {
+    padding: 0.5rem;
+  }
+
+  .header-section {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .action-wrapper {
+    width: 100%;
+  }
+
+  .action-wrapper button {
+    width: 100%;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .table-card {
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+
+  ::ng-deep .modern-table .p-datatable-thead > tr > th {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  ::ng-deep .modern-table .p-datatable-tbody > tr > td {
+    border-bottom: 1px solid #334155;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  ::ng-deep .modern-table .p-datatable-tbody > tr > td .p-column-title {
+    display: block;
+    font-weight: 600;
+    color: #60a5fa;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .event-datetime {
+    gap: 0.5rem;
+  }
+
+  .status-badge,
+  .notify-badge {
+    width: 100%;
+    justify-content: center;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .action-buttons {
+    justify-content: flex-start;
+  }
+
+  ::ng-deep .action-buttons .p-button {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  ::ng-deep .modern-table .p-paginator {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  ::ng-deep .modern-table .p-paginator .p-paginator-pages .p-paginator-page {
+    min-width: 2rem;
+    height: 2rem;
+    font-size: 0.875rem;
+  }
+
+  ::ng-deep .modern-table .p-paginator .p-dropdown {
+    min-width: 2rem;
+    height: 2rem;
+  }
+
+  ::ng-deep .modern-table .p-paginator .p-dropdown .p-dropdown-label {
+    padding: 0.375rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 961px) {
+  ::ng-deep .modern-table .p-column-title {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .events-container {
+    padding: 0.25rem;
+  }
+
+  .header-section {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .page-title {
+    font-size: 1.25rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .title-wrapper i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .table-card {
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+
+  ::ng-deep .modern-table .p-datatable-thead > tr > th {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  ::ng-deep .modern-table .p-datatable-tbody > tr > td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .event-id {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .event-title {
+    font-size: 0.875rem;
+  }
+
+  .event-description {
+    font-size: 0.8rem;
+  }
+
+  .date-info,
+  .time-info {
+    font-size: 0.8rem;
+  }
+
+  .status-badge,
+  .notify-badge {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  ::ng-deep .action-buttons .p-button {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .empty-state {
+    padding: 2rem 1rem;
+  }
+
+  .empty-icon {
+    font-size: 2.5rem;
+  }
+
+  .empty-title {
+    font-size: 1.1rem;
+  }
+
+  .empty-message {
+    font-size: 0.875rem;
+  }
+
+  ::ng-deep .modern-table .p-paginator {
+    padding: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  ::ng-deep .modern-table .p-paginator .p-paginator-pages .p-paginator-page {
+    min-width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.75rem;
+  }
+
+  ::ng-deep .modern-table .p-paginator .p-paginator-current {
+    font-size: 0.75rem;
+  }
+
+  ::ng-deep .modern-table .p-paginator .p-dropdown {
+    min-width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  ::ng-deep .modern-table .p-paginator .p-dropdown .p-dropdown-label {
+    padding: 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  ::ng-deep .modern-table .p-paginator .p-dropdown .p-dropdown-trigger {
+    width: 1.5rem;
+  }
+}
+
+/* Loading State */
+::ng-deep .modern-table .p-datatable-loading-overlay {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+::ng-deep .modern-table .p-datatable .p-datatable-loading-icon {
+  color: #3b82f6;
+  font-size: 2rem;
+}
+
+/* Estilos para los modales */
+.p-dialog .p-dialog-header,
+.p-dialog .p-dialog-content,
+.p-dialog .p-dialog-footer {
+  background-color: #1f2937;
+  color: white;
+}
+
+.p-dialog .p-field label {
+  color: white;
+}
+
+/* Inputs y controles */
+.p-inputtext,
+.p-textarea,
+.p-datepicker {
+  background-color: #374151;
+  color: white;
+  border-color: #4b5563;
+}
+
+.p-inputtext:focus,
+.p-textarea:focus {
+  border-color: #60a5fa;
+}
+
+.p-checkbox .p-checkbox-box {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  background-color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+/* Elimina márgenes y rellenos inesperados */
+.events-container {
+  margin-top: 0;
+  padding-top: 0;
+  scroll-margin-top: 0;
+}
+
+/* Asegura que el contenedor principal no empuje hacia abajo */
+.layout-content,
+.layout-wrapper,
+body,
+html {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  height: auto;
+}
+
+.table-responsive {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Estilos para el modal del diálogo */
+.p-dialog {
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.p-dialog .p-dialog-header {
+  border-bottom: 1px solid #4b5563;
+  padding: 1.5rem;
+}
+
+.p-dialog .p-dialog-content {
+  padding: 1.5rem;
+}
+
+.p-dialog .p-dialog-footer {
+  border-top: 1px solid #4b5563;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* Estilos para el calendario */
+.p-calendar .p-inputtext {
+  width: 100%;
+}
+
+.p-datepicker {
+  background-color: #1f2937;
+  border: 1px solid #4b5563;
+}
+
+.p-datepicker table td {
+  color: white;
+}
+
+.p-datepicker table td.p-datepicker-today > span {
+  background-color: #374151;
+  color: #60a5fa;
+}
+
+.p-datepicker table td > span:hover {
+  background-color: #4b5563;
+}
+
+.p-datepicker table td > span.p-highlight {
+  background-color: #60a5fa;
+  color: white;
+}
+
+.p-datepicker .p-datepicker-header {
+  background-color: #374151;
+  color: white;
+  border-bottom: 1px solid #4b5563;
+}
+
+.p-datepicker .p-timepicker {
+  background-color: #374151;
+  border-top: 1px solid #4b5563;
+}
+
+.p-datepicker .p-timepicker span {
+  color: white;
+}
+
+/* Botones del modal */
+.p-dialog .p-dialog-footer .p-button {
+  margin: 0;
+}
+
+/* Field spacing */
+.field {
+  margin-bottom: 1rem;
+}
+
+.p-fluid .field > label {
+  display: block;
+  margin-bottom: 0.5rem;
+}

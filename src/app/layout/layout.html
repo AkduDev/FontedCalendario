@@ -1,0 +1,59 @@
+<div class="layout-wrapper">
+  <!-- Top Bar -->
+  <div class="layout-topbar bg-gray-800 text-white p-4 flex justify-between items-center shadow-lg">
+    <div class="flex items-center">
+      <button pButton type="button" icon="pi pi-bars" (click)="toggleSidebar()" class="p-button-outlined p-button-rounded mr-4 text-white border-white"></button>
+      <h1 class="text-xl font-bold hidden sm:block">Fonted Calendario</h1>
+      <h1 class="text-lg font-bold sm:hidden">FC</h1>
+    </div>
+    <div class="flex items-center space-x-2 sm:space-x-4">
+      <span class="p-input-icon-left hidden md:block">
+        <i class="pi pi-search"></i>
+        <input pInputText type="text" placeholder="Buscar..." class="bg-gray-700 border-gray-600 text-white w-48 pl-10" />
+      </span>
+      <i class="pi pi-user text-2xl cursor-pointer"></i>
+      <div class="relative">
+        <button pButton type="button" icon="pi pi-palette" (click)="toggleThemeMenu()" class="p-button-outlined p-button-rounded text-white border-white"></button>
+        <div *ngIf="themeMenuVisible" class="absolute right-0 mt-2 w-48 bg-gray-700 border border-gray-600 rounded shadow-lg z-50">
+          <div class="p-2">
+            <div class="grid grid-cols-3 gap-2">
+              <button *ngFor="let theme of availableThemes" (click)="selectTheme(theme)" class="w-12 h-12 rounded-full border-2 border-white" [style.background-color]="theme.color" title="theme.name"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Layout Container (Sidebar + Content) -->
+  <div class="layout-main-container">
+    <!-- Sidebar -->
+    <div class="sidebar" [class.sidebar-open]="sidebarVisible" [class.sidebar-closed]="!sidebarVisible">
+      <div class="sidebar-content">
+        <h2 class="text-lg font-bold mb-4 text-white">Menú</h2>
+        <div class="md:hidden mb-6">
+          <span class="p-input-icon-left w-full search-mobile">
+            <i class="pi pi-search text-gray-400"></i>
+            <input pInputText type="text" placeholder="Buscar..." class="bg-gray-600 border-gray-500 text-white w-full pl-10 h-8" />
+          </span>
+        </div>
+        <ul class="menu-list space-y-2">
+          <li *ngFor="let item of menuItems" class="menu-item p-3 rounded hover:bg-gray-600 transition-colors" (click)="item.command ? item.command() : null" [routerLink]="item.routerLink">
+            <i [class]="item.icon" class="mr-3"></i>
+            {{ item.label }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overlay for mobile -->
+    <div class="sidebar-overlay md:hidden" *ngIf="sidebarVisible" (click)="toggleSidebar()"></div>
+
+    <!-- Main Content -->
+    <div class="layout-content p-4 md:p-6">
+      <div class="max-w-7xl mx-auto">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
