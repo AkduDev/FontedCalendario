@@ -29,7 +29,7 @@ export class Layout {
     {
       label: 'Eventos',
       icon: 'pi pi-calendar',
-      routerLink: '/events'
+      routerLink: '/app/events'
     },
     {
       label: 'Cerrar Sesión',

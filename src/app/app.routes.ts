@@ -8,11 +8,12 @@ import { Unauthorized } from './pages/unauthorized/unauthorized';
 import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: Login },
   { path: 'register', component: Register },
   { path: 'unauthorized', component: Unauthorized },
   {
-    path: '',
+    path: 'app',
     component: Layout,
     canActivate: [AuthGuard],
     children: [

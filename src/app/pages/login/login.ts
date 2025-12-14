@@ -39,7 +39,7 @@ export class Login{
           console.log('Login exitoso', response);
           this.loading = false;
           this.messageService.add({ severity: 'success', summary: 'Éxito', detail: `Usuario ${this.loginForm.value.email} se ha iniciado correctamente.` });
-          setTimeout(() => this.router.navigate(['/dashboard']), 1500); // Delay to show message
+          setTimeout(() => this.router.navigate(['/app/events']), 1500); // Delay to show message
         },
         error: (error) => {
           console.error('Error en login', error);
