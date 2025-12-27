@@ -1,5 +1,28 @@
 # FontedCalendario
 
+## Despliegue en GitHub Pages
+
+Este proyecto está configurado para desplegarse automáticamente en GitHub Pages usando GitHub Actions. El workflow se encuentra en `.github/workflows/gh-pages.yml`.
+
+### Configuración
+
+1. Asegúrate de que tu repositorio tenga GitHub Pages habilitado en la configuración:
+   - Ve a "Settings" > "Pages" en tu repositorio
+   - Selecciona "Deploy from a branch" como fuente
+   - Selecciona la rama `gh-pages` y carpeta `/ (root)`
+
+2. El workflow de GitHub Actions se activará automáticamente cuando hagas push a la rama `main`
+
+### Manual Build
+
+Si deseas construir manualmente para GitHub Pages, usa:
+
+```bash
+ng build --base-href="/[NOMBRE-DE-TU-REPOSITORIO]/"
+```
+
+Luego puedes servir los archivos estáticos desde la carpeta `dist/FontedCalendario/browser`
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
 
 ## Development server
